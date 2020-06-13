@@ -93,13 +93,13 @@ def handle_message(event):
     elif event.message.text == '新聞':
         message = TextSendMessage(getNews())
         
-    elif event.message.text == "Carousel template":
+    elif event.message.text == "選單":
         Carousel_template = TemplateSendMessage(
-        alt_text='Carousel template',
+        alt_text='選單',
         template=CarouselTemplate(
         columns=[
             CarouselColumn(
-                thumbnail_image_url='顯示在開頭的大圖片網址',
+                thumbnail_image_url='https://imgur.com/a/rIeZFES',
                 title='this is menu1',
                 text='description1',
                 actions=[
@@ -113,13 +113,13 @@ def handle_message(event):
                         text='message text1'
                     ),
                     URITemplateAction(
-                        label='uri1',
-                        uri='http://example.com/1'
+                        label='新聞連結',
+                        uri='https://www.ettoday.net/news/20200613/1737170.htm'
                     )
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url='顯示在開頭的大圖片網址',
+                thumbnail_image_url='https://imgur.com/a/rIeZFES',
                 title='this is menu2',
                 text='description2',
                 actions=[

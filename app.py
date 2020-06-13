@@ -90,7 +90,7 @@ def handle_message(event):
         )
 
      # 傳送電影推薦
-    if event.message.text == '影片':
+    elif event.message.text == '影片':
         message = TextSendMessage(getNews())
         
     # 傳送貼圖

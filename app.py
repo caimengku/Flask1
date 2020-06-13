@@ -76,6 +76,7 @@ def getNews():
     tmp = title + ': ' +url
     return tmp
 
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # 傳送文字
@@ -89,11 +90,8 @@ def handle_message(event):
         )
 
      # 傳送電影推薦
-    elif event.message.text == '影片':
-        message = ImageSendMessage(
-            original_content_url='https://imgur.com/a/t8PoMIU',
-            preview_image_url='https://imgur.com/a/t8PoMIU'
-        )
+    if event.message.text == '影片':
+        message = TextSendMessage(getNews())
         
     # 傳送貼圖
     elif event.message.text == '傳送貼圖':

@@ -93,8 +93,9 @@ def handle_message(event):
     elif event.message.text == '新聞':
         message = TextSendMessage(getNews())
         
+    # 傳送選單    
     elif event.message.text == "選單":
-        Carousel_template = TemplateSendMessage(
+        message = TemplateSendMessage(
         alt_text='選單',
         template=CarouselTemplate(
         columns=[
